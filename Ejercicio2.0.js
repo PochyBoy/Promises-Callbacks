@@ -22,7 +22,7 @@ let salaries = [{
 
 /* Ejercicio 1*/
 
-let getEmpoyee = (ide)=> { 
+let getEmpoyee = ide=> { 
     return new Promise((resolve,reject)=>{
       let prueba = employees.find(item => item.id == ide)
      if(prueba != undefined){
@@ -32,10 +32,26 @@ let getEmpoyee = (ide)=> {
       } 
     })   
   }
-  getEmpoyee(5).then(res => {
+  getEmpoyee(3).then(res => {
     console.log(res)
   })
   .catch(error => console.log(error.message))
 
 /* Ejercicio 2*/
+let getSalary = objeto=> { 
+  return new Promise((resolve,reject)=>{
+    let prueba = salaries.find(item => item.id == objeto.id)
+   if(prueba != undefined){
+     resolve(`El salario es: ${prueba.salary}`)
+   }else{
+        reject(new Error('No existe este empleado'))
+    } 
+  })   
+}
+getSalary(employees[1]).then(res => {
+  console.log(res)
+})
+.catch(error => console.log(error.message))
+
+
 

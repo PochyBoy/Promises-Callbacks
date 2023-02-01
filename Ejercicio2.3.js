@@ -51,7 +51,7 @@ const getSalary = employee => {
     });
 };
  
-getEmployee(5)
+getEmployee(2)
     .then(employee => getSalary(employee))
-    .then(result => console.log(`El nombre del empleado es ${result.Nombre} y su salario es ${result.Salario}`))
-    .catch(error => {console.error(`Ha ocurrido un error: ${error}`);})
+    .then(employeeWithSalary => console.log(employeeWithSalary))
+ 
